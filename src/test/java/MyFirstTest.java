@@ -19,10 +19,29 @@ public class MyFirstTest {
         arrayList2.add(2);
     }
 
+    ArrayList<String> languages = new ArrayList<>();
+    ArrayList<String> moreLanguages = new ArrayList<>();
+
+    @Before
+    public void setUpStrings(){
+        languages.add("Java");
+        languages.add("JavaScript");
+        languages.add("Python");
+        moreLanguages.add("Java");
+        moreLanguages.add("JavaScript");
+        moreLanguages.add("Python");
+    }
+
+
     @Test
     public void testObjectSameness(){
         // this will currently fail, array contents are same, but arrayList and arrayList2 are diff objects
         assertSame(arrayList, arrayList2);
+    }
+
+    @Test
+    public void testLanguageSameness(){
+        assertNotSame(languages, moreLanguages);
     }
 
 
@@ -34,6 +53,18 @@ public class MyFirstTest {
         long expected = 50;
 
         assertEquals(expected, MathOperations.add(input1, input2));
+    }
+
+
+
+    @Test
+    public void testArrayEquality2(){
+        int[] numbers = {1, 2, 3};
+        int[] otherNumbers = new int[3];
+        otherNumbers[0] = 1;
+        otherNumbers[1] = 2;
+        otherNumbers[2] = 3;
+        assertArrayEquals(numbers, otherNumbers);
     }
 
     @Test
@@ -52,6 +83,16 @@ public class MyFirstTest {
 
         assertArrayEquals(endArray, MathOperations.addOneToArray(startArray));
     }
+
+    @Test
+    public void assertTrueOrFalse(){
+        String language = "PHP";
+        assertTrue(language.contains("H")); // use assertTrue for this statement
+        assertFalse( language.contains("J")); // use assertFalse for this statement
+
+    }
+
+
 
 
 
