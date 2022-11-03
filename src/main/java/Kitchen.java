@@ -19,9 +19,11 @@ public class Kitchen {
     }
 
     public void pop(){
+        if(tortillas.length > 0){
         tortillas[tortillas.length-1] = null;
         String[] copy = Arrays.copyOf(tortillas, tortillas.length-1);
         tortillas = copy;
+        }
     }
 
     public boolean contains(String tortilla){

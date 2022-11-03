@@ -52,19 +52,19 @@ public class KitchenTest {
         assertFalse(kitchenWithMany.isEmpty());
     }
 
-//    @Test
-//    public void testRemove(){
-//        // Trying to pop from an empty kitchen
-//        emptyKitchen.pop();
-//        // The void method should catch the if statement and the size should be still 0
-//        assertEquals(0, emptyKitchen.size());
-//
-//        kitchenWithOne.pop();
-//        assertEquals(0, kitchenWithOne.size());
-//
-//        kitchenWithMany.pop();
-//        assertEquals(3, kitchenWithMany.size());
-//    }
+    @Test
+    public void testRemove(){
+        // Trying to pop from an empty kitchen
+        emptyKitchen.pop();
+        // The void method should catch the if statement and the size should be still 0
+        assertEquals(0, emptyKitchen.size());
+
+        kitchenWithOne.pop();
+        assertEquals(0, kitchenWithOne.size());
+
+        kitchenWithMany.pop();
+        assertEquals(3, kitchenWithMany.size());
+    }
 
     @Test
     public void testContains(){
